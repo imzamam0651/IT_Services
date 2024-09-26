@@ -1,0 +1,13 @@
+<h1>{{ service.service_name }}</h1>
+<img src="{{ service.service_image.url }}" alt="{{ service.service_name }}" width="200">
+<p><strong>Price:</strong> ${{ service.service_price }}</p>
+<p><strong>Package:</strong> {{ service.service_package }}</p>
+<p><strong>Payment Terms:</strong> {{ service.payment_terms }}</p>
+<p><strong>Tax:</strong> {{ service.service_tax }}%</p>
+
+<a href="{% url 'update_service' service.pk %}">Update</a>
+<form method="post" action="{% url 'delete_service' service.pk %}">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+</form>
+<a href="{% url 'service_list' %}">Back to Service List</a>

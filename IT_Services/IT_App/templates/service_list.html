@@ -1,0 +1,10 @@
+<h1>Services</h1>
+<a href="{% url 'create_service' %}">Create Service</a>
+<ul>
+    {% for service in services %}
+        <li>
+            <strong>{{ service.service_name }}</strong> - ${{ service.service_price }}
+            <a href="{% url 'service_detail' service.pk %}">View</a>
+        </li>
+    {% endfor %}
+</ul>

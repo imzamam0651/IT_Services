@@ -1,0 +1,7 @@
+<h1>Create Service</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Service</button>
+</form>
+<a href="{% url 'service_list' %}">Back to Service List</a>

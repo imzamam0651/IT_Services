@@ -1,0 +1,13 @@
+<h1>Subscribe to {{ service.service_name }}</h1>
+<p><strong>Service Package:</strong> {{ service.service_package }}</p>
+<p><strong>Price:</strong> ${{ service.service_price }}</p>
+<p><strong>GST ({{ service.service_tax }}%):</strong></p>
+<p><strong>Net Price:</strong> ${{ net_price }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Subscribe</button>
+</form>
+
+<a href="{% url 'home' %}">Back to Services</a>
