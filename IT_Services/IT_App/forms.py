@@ -22,7 +22,8 @@ class ServiceForm(forms.ModelForm):
             'service_price', 
             'service_package', 
             'service_tax', 
-            'service_image'
+            'service_image',
+            'active'
         ]
 
     # Optional: Customizing widgets for better UX
