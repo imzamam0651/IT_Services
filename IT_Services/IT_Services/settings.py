@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'IT_App',
+    'razorpay',
 ]
 
 MIDDLEWARE = [
@@ -91,6 +92,9 @@ DATABASES = {
     }
 }
 
+# Razorpay API Keys
+RAZORPAY_KEY_ID = 'rzp_test_e664V0FP0zQy7N'
+RAZORPAY_KEY_SECRET = 'QdnuRxUHrPGeiJc9lDTXYPO7'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
