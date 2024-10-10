@@ -1,0 +1,22 @@
+<h1>Confirm Payment for {{ service.service_name }}</h1>
+
+<p><strong>Amount (including tax):</strong> ₹{{ total_amount }}</p>
+
+<!-- Razorpay payment button -->
+<form method="POST">
+    {% csrf_token %}
+    <script 
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="{{razorpay_key_id}}"  <!-- Razorpay Key ID-->
+        data-amount="{{ amount_in_paise }}"  <!-- Amount in Paise -->
+        data-currency="INR"
+        data-order_id="{{ order_id }}"  <!-- Order ID from Razorpay -->
+        data-buttontext="Pay Now"
+        data-name="Your Company Name"
+        data-description="Service Description"
+        data-image="https://your-logo-url.com/logo.png"
+        data-prefill.name="{{ request.user.username }}"
+        data-prefill.email="{{ request.user.email }}"
+        data-theme.color="#F37254"
+    </script>
+</form>
