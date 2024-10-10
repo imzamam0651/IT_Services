@@ -1,9 +1,12 @@
 <h1>Active Services</h1>
 
+<div><a href="{% url 'create_service' %}">Create Service</a></div>
 <ul>
     {% for service in services %}
         <li>
+            
             <strong>{{ service.service_name }}</strong> - ${{ service.service_price }}
+            
             <a href="{% url 'service_detail' service.pk %}">View</a>
             <a href="{% url 'subscribe_service' service.pk %}">Buy</a>
         </li>
