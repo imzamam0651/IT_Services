@@ -5,7 +5,7 @@ urlpatterns = [
     # User-related views
     path('register/', views.register, name='register'),
     path('otp-verification/', views.otp_verification, name='otp_verification'),
-    path('login/', views.user_login, name='login'),
+    path('login/', views.login_view, name='login'),
     
     # Service CRUD views
     path('', views.home, name='home'),  # Home page showing active services
